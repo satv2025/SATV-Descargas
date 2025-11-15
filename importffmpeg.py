@@ -1,14 +1,17 @@
-import ffmpeg
-import os
+import subprocess
 
-# Ruta del archivo de entrada y salida
-input_path = r"C:\Users\skbof\AppData\Roaming\Wondershare\Wondershare Filmora\Output\Mi video - copia.mp4"
-output_path = r"C:\Users\skbof\OneDrive\Documentos\GitHub\SATV-Descargas\files\videondm2_comprimido.mp4"
+input_file = r"C:\Users\skbof\AppData\Roaming\Wondershare\Wondershare Filmora\Output\Mi video - copia.mp4"
+output_file = r"C:\Users\skbof\AppData\Roaming\Wondershare\Wondershare Filmora\Output\Mi_video.wav"
 
-# Verificar si el archivo de entrada existe
-if not os.path.exists(input_path):
-    print(f"El archivo {input_path} no existe.")
-else:
-    # Ejecutar FFmpeg para comprimir el video
-    ffmpeg.input(input_path).output(output_path, vcodec='libx264', preset='slow', crf=23, acodec='aac', audio_bitrate='128k', movflags='+faststart').run()
-    print(f"El video se ha comprimido y guardado en: {output_path}")
+# Comando FFmpeg: extraer audio a WAV (44.1 kHz, 16-bit, mono o estéreo según necesites)
+command = [
+    "ffmpeg",
+    "-i", input_file,
+    "-acodec", "pcm_s16le",  # WAV sin compresión
+    "-ar", "44100",          # Frecuencia de muestreo
+    output_file
+]
+
+subprocess.run(command, check=True)
+
+print("Conversión completada:", output_file)
