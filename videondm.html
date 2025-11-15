@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descargar Archivo - Sol Argentino TV</title>
+  <link rel="stylesheet" href="satv.css">
+  <link rel="stylesheet" href="descargas.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="icon" href="https://beta.solargentinotv.com.ar/Logo%20SATV%202024%20NAVIDAD.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!-- Menú superior estilo Win11 -->
+  <header class="header">
+    <div class="menu-container">
+      <h1 class="logo">Descargas - Sol Argentino TV</h1>
+      <div class="desc">
+        <h5>Bienvenido a nuestro sitio web. Aquí podrás acceder a nuestra programación, transmisiones en vivo, noticias,
+          y más.</h5>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <section id="noticias">
+      <h2>Descargas</h2>
+      <p>Usa nuestro servicio de descargas de archivos. Cooming Son (2025-2027)</p>
+
+      <div class="noticias-container">
+        <div class="noticia-content">
+          <h3>Descargar videondmpro</h3>
+          <p>video-ndm.mp4</p>
+          <a href="files/videondmpro.mp4" id="downloadBtn" download>DESCARGAR</a>
+
+          <!-- Barra de carga con fondo translúcido y centrada -->
+          <div id="loadingBarContainer" class="loading-bar-container">
+            <div id="loadingBar" class="loading-bar"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', function (event) {
+      event.preventDefault(); // Prevenir la descarga inmediata
+
+      // Mostrar la barra de carga
+      var loadingBarContainer = document.getElementById('loadingBarContainer');
+      var loadingBar = document.getElementById('loadingBar');
+
+      loadingBarContainer.style.display = 'block'; // Hacer visible la barra de carga
+
+      // Simular la carga de la barra
+      var width = 0; // Empezar desde 0%
+      var interval = setInterval(function () {
+        if (width >= 103) {
+          clearInterval(interval); // Detener cuando la barra llegue al 100%
+          window.location.href = 'Marcador LPF 2024 Imagenes.rar'; // Iniciar la descarga
+          loadingBarContainer.style.display = 'none'; // Ocultar la barra de carga después de la descarga
+        } else {
+          width++; // Incrementar el ancho
+          loadingBar.style.width = width + '%'; // Establecer el ancho de la barra
+        }
+      }, 30); // Incremento cada 30 ms para simular la carga
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sol Argentino TV - Todos los derechos reservados. Nos actualizamos cada día pensando en vos. <a
+        href="contacto">Contactanos</a></p>
+  </footer>
+</body>
+
+</html>
