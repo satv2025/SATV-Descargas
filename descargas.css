@@ -13,12 +13,16 @@ section {
 
 .noticias-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18.75em, 1fr)); /* Disposición en columnas */
-  gap: 1.25em; /* Espacio entre cada noticia */
+  grid-template-columns: repeat(auto-fill, minmax(18.75em, 1fr));
+  /* Disposición en columnas */
+  gap: 1.25em;
+  /* Espacio entre cada noticia */
   margin-top: 1.25em;
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
 }
 
 footer {
@@ -36,51 +40,68 @@ footer {
 }
 
 h5 {
-color: #0078d4;
-font-size: 1em;
+  color: #0078d4;
+  font-size: 1em;
 }
 
-    /* Estilo para centrar el contenedor de la barra de carga */
-    .loading-bar-container {
-      width: 100%; /* Ancho al 100% del contenedor */
-      max-width: 500px; /* Opcional: max ancho para pantallas grandes */
-      height: 5px;
-      background-color: rgba(0, 120, 212, 0.3); /* Fondo translúcido */
-      margin: 10px auto; /* Centrado horizontal */
-      display: none; /* Inicialmente oculto */
-      border-radius: 3px;
-      position: relative;
-    }
+/* Estilo para centrar el contenedor de la barra de carga */
+.loading-bar-container {
+  width: 100%;
+  /* Ancho al 100% del contenedor */
+  max-width: 500px;
+  /* Opcional: max ancho para pantallas grandes */
+  height: 5px;
+  background-color: rgba(0, 120, 212, 0.3);
+  /* Fondo translúcido */
+  margin: 10px auto;
+  /* Centrado horizontal */
+  display: none;
+  /* Inicialmente oculto */
+  border-radius: 3px;
+  position: relative;
+}
 
-    .loading-bar {
-      width: 0%;
-      height: 100%;
-      background-color: #0078d4; /* Color de la barra cargando */
-      border-radius: 3px;
-      transition: width 0.1s linear; /* Transición suave */
-    }
+.loading-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #0078d4;
+  /* Color de la barra cargando */
+  border-radius: 3px;
+  transition: width 0.1s linear;
+  /* Transición suave */
+}
 
 /* Estilo individual para cada recuadro de noticia */
 .noticia {
-  background-color: #fff; /* Fondo blanco */
-  border: 0.063em solid #ddd; /* Borde gris claro */
-  border-radius: 0.625em; /* Bordes redondeados */
-  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  overflow: hidden; /* Para que el contenido no sobresalga */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  background-color: #fff;
+  /* Fondo blanco */
+  border: 0.063em solid #ddd;
+  /* Borde gris claro */
+  border-radius: 0.625em;
+  /* Bordes redondeados */
+  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+  /* Sombra sutil */
+  overflow: hidden;
+  /* Para que el contenido no sobresalga */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Transición suave */
 }
 
 .noticia:hover {
-  transform: translateY(-0.313em); /* Movimiento hacia arriba al pasar el mouse */
-  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* Sombra más intensa en hover */
+  transform: translateY(-0.313em);
+  /* Movimiento hacia arriba al pasar el mouse */
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+  /* Sombra más intensa en hover */
 }
 
 /* Estilo para las imágenes de las noticias */
 .noticia img {
   width: 100%;
   height: 12.5em;
-  object-fit: cover; /* Asegura que la imagen cubra bien el área */
-  border-bottom: 0.063em solid #ddd; /* Línea divisoria entre la imagen y el contenido */
+  object-fit: cover;
+  /* Asegura que la imagen cubra bien el área */
+  border-bottom: 0.063em solid #ddd;
+  /* Línea divisoria entre la imagen y el contenido */
 }
 
 .noticia-content {
@@ -100,7 +121,8 @@ font-size: 1em;
 .noticia-content p {
   font-size: 1em;
   color: #555;
-  text-align: justify; /* Justificación del texto */
+  text-align: justify;
+  /* Justificación del texto */
   margin-bottom: 0.625em;
 }
 
@@ -108,48 +130,63 @@ font-size: 1em;
 .noticia-content a {
   display: inline-block;
   padding: 0.5em 1em;
-  background-color: #fff; /* Color de fondo del enlace */
+  background-color: #fff;
+  /* Color de fondo del enlace */
   color: #0078d4;
   border: 0.125em solid #0078d4;
   font-weight: 700;
-  border-radius: 0.5em; /* Bordes redondeados */
+  border-radius: 0.5em;
+  /* Bordes redondeados */
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .noticia-content a:hover {
-  background-color: #005fa3; /* Color de fondo al hacer hover */
+  background-color: #0078d4;
+  /* Color de fondo del enlace */
   color: #fff;
+  border: 0.125em solid #0078d4;
 }
 
 /* Responsive Design */
-@media (max-width: 48em) { /* Para pantallas pequeñas (768px o menos) */
+@media (max-width: 48em) {
+
+  /* Para pantallas pequeñas (768px o menos) */
   .noticias-container {
-    grid-template-columns: 1fr; /* Una sola columna */
-    gap: 1em; /* Espacio más compacto */
+    grid-template-columns: 1fr;
+    /* Una sola columna */
+    gap: 1em;
+    /* Espacio más compacto */
   }
 
   .noticia img {
-    height: 10em; /* Imagen más compacta */
+    height: 10em;
+    /* Imagen más compacta */
   }
 
   .noticia-content h3 {
-    font-size: 1.1em; /* Títulos más pequeños */
+    font-size: 1.1em;
+    /* Títulos más pequeños */
   }
 
   .noticia-content p {
-    font-size: 0.9em; /* Texto más pequeño */
+    font-size: 0.9em;
+    /* Texto más pequeño */
   }
 
   .noticia-content a {
     font-size: 0.9em;
-    padding: 0.4em 0.8em; /* Botones más compactos */
+    padding: 0.4em 0.8em;
+    /* Botones más compactos */
   }
 }
 
-@media (max-width: 30em) { /* Para pantallas extra pequeñas (480px o menos) */
+@media (max-width: 30em) {
+
+  /* Para pantallas extra pequeñas (480px o menos) */
   .noticia img {
-    height: 8em; /* Imagen aún más compacta */
+    height: 8em;
+    /* Imagen aún más compacta */
   }
 
   .noticia-content h3 {
